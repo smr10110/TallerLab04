@@ -14,7 +14,7 @@ public class Team {
         this.id = id;
         this.nombre = nombre;
         this.ranking = ranking;
-        this.rutaBandera = rutaBandera;
+        this.rutaBandera = rutaBandera; // La ruta ya debe estar correcta en el archivo
         this.jugadores = new ArrayList<>();
     }
 
