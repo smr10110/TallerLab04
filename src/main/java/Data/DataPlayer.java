@@ -4,10 +4,7 @@ import Model.Player;
 import Model.Position;
 import Model.Team;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -84,5 +81,28 @@ public class DataPlayer {
         }
 
         return jugadores;
+    }
+
+    public static void editarJugador(Team equipo, int indice, String nuevoNombre, Position nuevaPosicion) {
+        Player jugador = equipo.getJugadores().get(indice);
+        jugador.setNombre(nuevoNombre);
+        jugador.setPosicion(nuevaPosicion);
+    }
+
+    public static void guardarCambios(Team equipo) throws IOException {
+        String nombreEquipo = equipo.getNombre();
+        String archivoJugadores = EQUIPO_ARCHIVO_MAP.get(nombreEquipo);
+
+        if (archivoJugadores == null) {
+            throw new IOException("No se encontró el archivo de jugadores para el equipo: " + nombreEquipo);
+        }
+
+        File file = new File(DataPlayer.class.getClassLoader().getResource(archivoJugadores).getFile());
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+            for (Player jugador : equipo.getJugadores()) {
+                writer.write(jugador.getNumero() + ";" + jugador.getNombre() + ";" + jugador.getPosicion().toString());
+                writer.newLine();
+            }
+        }
     }
 }
