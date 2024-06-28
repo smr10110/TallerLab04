@@ -4,5 +4,5 @@ public enum Position {
     GK, // Portero
     DF, // Defensor
     MF, // Mediocampista
-    FW  // Delantero
+    FW,  // Delantero
 }
