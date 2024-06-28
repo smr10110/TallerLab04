@@ -12,3 +12,6 @@ Angelo Huaiquil:
 4.Creación de la primera version interfaz gráfica GuiTeams para mostrar la información de los equipos y sus banderas.
 5.Creación de la primera version interfaz gráfica GuiPlayers para mostrar la lista de jugadores de cada equipo.
 6.Implementación del Launcher para iniciar la aplicación.
+
+
+Nicolás Tenorio : Solucionar errores, implementar y sincronizar GUI, Validacion de datos
