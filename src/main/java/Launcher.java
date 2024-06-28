@@ -1,5 +1,3 @@
-package Main;
-
 import Data.DataPlayer;
 import Guis.GuiTeams;
 
